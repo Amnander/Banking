@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ClientDetails
 {
     public static void main(String[] args)
@@ -5,11 +7,19 @@ public class ClientDetails
         BankAccount bankAccount = new BankAccount(1000);
         BankAccount otherBankAccount = new BankAccount(500);
 
-        System.out.println("The Balance after Deposit is :" + bankAccount.deposit(100));
-        System.out.println("The Balance after Withdrawing is :" + bankAccount.withdraw(100));
+        Scanner sc = new Scanner(System.in);
 
-        bankAccount.transferBalance(100, otherBankAccount);
-        System.out.println("The New Balance in the Bank Account is:" + bankAccount.getBalance());
+        System.out.println("Enter amount to Deposit");
+        double amount = Double.parseDouble(sc.nextLine()); // parsing string to double.
+        System.out.println("Your Balance after Deposit is: " + bankAccount.deposit(amount));
+
+        System.out.println("Enter amount to Withdraw");
+        amount = Double.parseDouble(sc.nextLine());
+        System.out.println("Your Balance after Withdrawal is: " + bankAccount.withdraw(amount));
+
+        System.out.println("Enter the amount you want to transfer");
+        amount = Double.parseDouble(sc.nextLine());
+        bankAccount.transferBalance(amount, otherBankAccount);
         bankAccount.printBalance();
 
 

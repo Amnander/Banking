@@ -1,2 +1,0 @@
-# Banking
-Banking project

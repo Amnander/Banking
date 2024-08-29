@@ -1,3 +1,3 @@
 Read me please
 
-Banking project is in banking branch
+Bank project is in banking branch
